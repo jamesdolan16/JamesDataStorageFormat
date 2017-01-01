@@ -2,10 +2,10 @@
 Title: JDSF( James' Data Storage Format )
 Author(s): James Dolan
 Build: 1.0.0
-lastRevision: 30/12/16
+lastRevision: 1/1/17
 
-***TODO***
-		[]-Integrate a packing process for monotype data files.
+***TODO_FOR_CURRENT_BUILD***
+	20:32-[x]-Integrate a packing process for monotype data files.
 			[x]-Develop prototype process for ints.
 */
 
@@ -93,7 +93,7 @@ void JDSF::pack(std::map<std::string, std::string> toPack)
 	std::ofstream file(iofile);
 	for (const auto &element : toPack)
 	{
-		file << element.first << ":" << element.second << ";\n";
+		file << element.first << ":\"" << element.second << "\";\n";
 	}
 }
 
